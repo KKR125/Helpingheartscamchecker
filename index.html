@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Helping Heart Scam Checker</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0ff;--g1:#d6e4ff;--g2:#ffd3e8;--card:#fff;--ink:#231b4d;--mute:#5f5a82;--line:#d9d3f0;--ok:#1f7a4d;--warn:#b7791f;--bad:#c2410c;--crit:#b91c1c;--hl:#ffd9a8;--btn:#3b4cca;--btnt:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a1d;--card:#16262a;--ink:#eaf1f0;--mute:#9fb2b5;--line:#2a3f44;--ok:#4ade80;--warn:#fbbf24;--bad:#fb923c;--crit:#f87171;--hl:#6b4a1c;--btn:#eaf1f0;--btnt:#0e1a1d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1a1d;--card:#16262a;--ink:#eaf1f0;--mute:#9fb2b5;--line:#2a3f44;--ok:#4ade80;--warn:#fbbf24;--bad:#fb923c;--crit:#f87171;--hl:#6b4a1c;--btn:#eaf1f0;--btnt:#0e1a1d;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1233;--g1:#1b2556;--g2:#4a1b45;--card:#241a45;--ink:#f3eefe;--mute:#b9aedd;--line:#3d3068;--btn:#f9a8d4;--btnt:#1a1233;--hl:#7a2e5c}}
+:root[data-theme="dark"]{--bg:#1a1233;--g1:#1b2556;--g2:#4a1b45;--card:#241a45;--ink:#f3eefe;--mute:#b9aedd;--line:#3d3068;--btn:#f9a8d4;--btnt:#1a1233;--hl:#7a2e5c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100vh;background:var(--bg) linear-gradient(160deg,var(--g1),var(--g2)) fixed;color:var(--ink);font:400 16px/1.55 Hind,"Noto Sans Devanagari",system-ui,sans-serif}
+main{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font:800 clamp(26px,7vw,38px)/1.1 "Bricolage Grotesque",Hind,sans-serif;margin:18px 0 0;letter-spacing:-.02em;background:linear-gradient(90deg,#3b4cca,#d6338a);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand{background:linear-gradient(90deg,#93c5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text}}
+h1{font:800 clamp(22px,5.5vw,30px)/1.1 "Bricolage Grotesque",Hind,sans-serif;margin:14px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--mute);margin:0 0 18px}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{border:0;background:none;color:var(--ink);padding:6px 12px;font:600 14px Hind,sans-serif;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--btn);color:var(--btnt)}
+textarea{width:100%;min-height:150px;resize:vertical;padding:14px;border:2px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit}
+textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{border:0;border-radius:10px;padding:12px 20px;font:600 16px Hind,sans-serif;background:var(--btn);color:var(--btnt);cursor:pointer}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.chip{border:1px dashed var(--line);background:none;color:var(--mute);border-radius:99px;padding:5px 12px;font:500 13px Hind,sans-serif;cursor:pointer}
+.small{font-size:13px;color:var(--mute)}
+#res{margin-top:22px}
+.verdict{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;border-left:8px solid var(--c)}
+.verdict h2{font:800 26px/1.15 "Bricolage Grotesque",Hind,sans-serif;margin:0 0 4px;color:var(--c)}
+.ruler{position:relative;height:12px;border-radius:6px;margin:16px 0 6px;background:linear-gradient(90deg,var(--ok),var(--warn) 45%,var(--bad) 70%,var(--crit))}
+.ruler i{position:absolute;top:-5px;width:6px;height:22px;background:var(--ink);border-radius:3px;border:2px solid var(--card);transform:translateX(-50%)}
